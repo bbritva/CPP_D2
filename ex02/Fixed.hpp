@@ -24,14 +24,30 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed &num);
-	Fixed(int num);
-	Fixed(float f);
+	explicit Fixed(int num);
+	explicit Fixed(float f);
 	Fixed & operator=(Fixed const &num);
+	Fixed & operator>(Fixed &a);
+	Fixed & operator<(Fixed &a);
+	Fixed & operator>=(Fixed &a);
+	Fixed & operator<=(Fixed &a);
+	Fixed & operator++();
+	Fixed operator++(int);
+	Fixed operator--(int);
+	Fixed & operator--();
+	Fixed operator+(Fixed &a) const;
+	Fixed operator-(Fixed &a) const;
+	Fixed operator*(const Fixed &a) const;
+	Fixed operator/(Fixed &a) const;
+	bool operator==(Fixed &a) const;
+	bool operator!=(Fixed &a) const;
 	~Fixed();
-	int		getRawBits( void) const;
-	void	setRawBits( int const raw);
-	float	toFloat(void) const;
-	int	toInt(void) const;
+	int		getRawBits( ) const;
+	void	setRawBits( int raw);
+	float	toFloat() const;
+	int		toInt() const;
+	static	Fixed & max(const Fixed &a, const Fixed &b);
+	static	Fixed & min(const Fixed &a, const Fixed &b);
 };
 
 std::ostream & operator<<(std::ostream &stream, Fixed const &num);
