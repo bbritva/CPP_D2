@@ -10,6 +10,8 @@
 #include <cmath>
 
 #define CONS_MSG "Default constructor called\n"
+#define INT_CONS_MSG "Int constructor called\n"
+#define FLT_CONS_MSG "Float constructor called\n"
 #define COPY_MSG "Copy constructor called\n"
 #define ASSIGN_MSG "Assignation operator called\n"
 #define GRB_MSG "getRawBits member function called\n"

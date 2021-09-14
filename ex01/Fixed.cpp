@@ -14,18 +14,20 @@ Fixed::Fixed(const Fixed &num)
 
 Fixed::Fixed(int num)
 {
+	std::cout << INT_CONS_MSG;
 	this->_value = (num << this->_fb);
 }
 
 Fixed::Fixed(float f)
 {
+	std::cout << FLT_CONS_MSG;
 	this->_value = roundf(f * (1 << this->_fb));
 }
 
 Fixed& Fixed::operator=(Fixed const& num)
 {
 	std::cout << ASSIGN_MSG;
-	this->_value = num._value;
+	this->_value = num.getRawBits();
 	return (*this);
 }
 
