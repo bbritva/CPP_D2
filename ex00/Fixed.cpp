@@ -9,13 +9,13 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed &num)
 {
 	std::cout << COPY_MSG;
-	*this = num;
+	this->_value = num._value;
 }
 
 Fixed& Fixed::operator=(Fixed const& num)
 {
 	std::cout << ASSIGN_MSG;
-	this->_value = num._value;
+	this->_value = num.getRawBits();
 	return (*this);
 }
 
